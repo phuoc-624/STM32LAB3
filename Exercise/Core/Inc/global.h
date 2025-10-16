@@ -31,5 +31,10 @@ void light_traffic_run();
 void set_led(int mode);
 void set_timer_led();
 void display7SEG(int num, uint32_t GPIO_Pin);
+void display1(int num);
+void updateClockBuffer1(int num);
+void updateClockBuffer2(int num);
+void update7SEG(int index);
+void display2(int num);
 
 #endif /* INC_GLOBAL_H_ */

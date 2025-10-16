@@ -13,33 +13,24 @@ void fsm_automatic_mode()
 	switch (mode)
 	{
 		case NORMAL:
-			//todo
-			// den giao thong chay binh thuong
-			timer1_flag = 1;
 			light_traffic_run();
-			timer2_flag = 0;
 			break;
-		/*case MODIFY_RED:
-			//todo
-			// set co cho den do
-			timer2_flag = 1;
-			set_led(mode);
+		case MODIFY_RED:
+			set_led(mode); // cho led nhap nhay 2hz
+			display1(mode); // hien thi che do
+			display2(t_red); // hien thi thoi gian dang dieu chinh
 			break;
 		case MODIFY_YELLOW:
-			//todo
-			// set co cho den vang
-			timer2_flag = 1;
 			set_led(mode);
+			display1(mode);
+			display2(t_yellow);
 			break;
 		case MODIFY_GREEN:
-			//todo
-			// set co cho den xanh
-			timer2_flag = 1;
 			set_led(mode);
-			break;*/
+			display1(mode);
+			display2(t_green);
+			break;
 		default:
-			timer2_flag = 1;
-			set_led(mode);
 			break;
 	}
 }

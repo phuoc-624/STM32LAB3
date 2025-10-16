@@ -96,6 +96,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer1(50);
+  setTimer2(250);
+  setTimer3(50);
+  setTimer4(50);
+  setTimer5(50);
+
+  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
   while (1)
   {
 	 //LAB3
@@ -108,16 +118,10 @@ int main(void)
 		  set_timer_default();
 	  }
 	  fsm_automatic_mode();
-	  /*if (timer1_flag == 1)
+
+	  if (mode != 1)
 	  {
-		  fsm_automatic_mode();
-	  }*/
-	  if (timer2_flag == 1)
-	  {
-		  if (isButton2Pressed())
-		  {
-			  set_timer_led(mode);
-		  }
+		  if (isButton2Pressed()) set_timer_led(mode);
 	  }
 	  if (isButton3Pressed())
 	  {

@@ -10,6 +10,5 @@
 
 #include "global.h"
 extern int mode;
-void fsm_automatic_run(int button);
 void fsm_automatic_mode();
 #endif /* INC_FSM_AUTOMATIC_H_ */
