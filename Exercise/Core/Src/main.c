@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "button.h"
 #include "software_timer.h"
+#include "fsm_automatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,6 +99,30 @@ int main(void)
   while (1)
   {
 	 //LAB3
+	  if (isButton1Pressed())
+	  {
+		  mode = (mode % 4) + 1;
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10, SET);
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|
+				  	  	  		GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13, SET);
+		  set_timer_default();
+	  }
+	  fsm_automatic_mode();
+	  /*if (timer1_flag == 1)
+	  {
+		  fsm_automatic_mode();
+	  }*/
+	  if (timer2_flag == 1)
+	  {
+		  if (isButton2Pressed())
+		  {
+			  set_timer_led(mode);
+		  }
+	  }
+	  if (isButton3Pressed())
+	  {
+		  Confirm_action();
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -245,6 +270,7 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	timerRun();
+	getKeyInput();
 }
 
 /* USER CODE END 4 */
