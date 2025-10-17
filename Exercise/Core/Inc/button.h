@@ -20,6 +20,7 @@ extern int button3_flag;
 int isButton1Pressed();
 int isButton2Pressed();
 int isButton3Pressed();
+void clear_buttonPressed();
 void getKeyInput();
 
 #endif /* INC_BUTTON_H_ */

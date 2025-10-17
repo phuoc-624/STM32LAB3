@@ -2,5 +2,6 @@ button.c:19:5:isButton1Pressed	4	static
 button.c:27:5:isButton2Pressed	4	static
 button.c:34:5:isButton3Pressed	4	static
 button.c:42:5:isButton1LongPressed	4	static
-button.c:50:6:subKeyProcess	4	static
-button.c:56:6:getKeyInput	8	static
+button.c:50:6:clear_buttonPressed	4	static
+button.c:57:6:subKeyProcess	4	static
+button.c:63:6:getKeyInput	8	static

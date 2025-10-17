@@ -28,10 +28,8 @@ void display2(int num)
 	if (timer4_flag == 1)
 	{
 		update7SEG(index_led2);
-		//index_led2 = (index_led2 + 1 > 3) ? 2 : index_led2++;
 		index_led2++;
 		if (index_led2 > 3) index_led2 = 2;
-		//index_led2 = (index_led2 % 2) + 2;
 		setTimer4(50);
 	}
 }
@@ -111,7 +109,6 @@ void light_traffic_run()
 			  {
 				  if (t_red > 0)
 				  {
-					  //display7SEG(t_red, GPIO_PIN_7);
 					  updateClockBuffer2(t_red);
 					  if (t_red > timer_yellow)
 					  {
@@ -122,7 +119,6 @@ void light_traffic_run()
 						  HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, GPIO_PIN_SET);
 						  HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, GPIO_PIN_SET);
 						  HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, GPIO_PIN_RESET);
-						  //display7SEG(t_green, GPIO_PIN_0);
 						  updateClockBuffer1(t_green);
 						  t_green -= 1;
 					  }
@@ -135,7 +131,6 @@ void light_traffic_run()
 						  HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, GPIO_PIN_SET);
 						  HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, GPIO_PIN_RESET);
 						  HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, GPIO_PIN_SET);
-						  //display7SEG(t_yellow, GPIO_PIN_0);
 						  updateClockBuffer1(t_yellow);
 						  t_yellow -= 1;
 					  }
@@ -153,7 +148,6 @@ void light_traffic_run()
 			  {
 				  if (t_red > 0)
 				  {
-					  //display7SEG(t_red, GPIO_PIN_0);
 					  updateClockBuffer1(t_red);
 					  if (t_red > timer_yellow)
 					  {
@@ -164,7 +158,6 @@ void light_traffic_run()
 						  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, GPIO_PIN_SET);
 						  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, GPIO_PIN_SET);
 						  HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, GPIO_PIN_RESET);
-						  //display7SEG(t_green, GPIO_PIN_7);
 						  updateClockBuffer2(t_green);
 						  t_green -= 1;
 					  }
@@ -177,7 +170,6 @@ void light_traffic_run()
 						  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, GPIO_PIN_SET);
 				  		  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, GPIO_PIN_RESET);
 						  HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, GPIO_PIN_SET);
-						  //display7SEG(t_yellow, GPIO_PIN_7);
 						  updateClockBuffer2(t_yellow);
 						  t_yellow -= 1;
 					  }

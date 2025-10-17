@@ -47,6 +47,13 @@ int isButton1LongPressed(){
 	return 0;
 }
 
+void clear_buttonPressed()
+{
+	button1_flag = 0;
+	button2_flag = 0;
+	button3_flag = 0;
+}
+
 void subKeyProcess(){
 	//TODO
 	//HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
