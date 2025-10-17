@@ -20,6 +20,10 @@ int t_green = 10;
 int index_led1 = 0;
 int index_led2 = 2;
 
+int flag_red = 0;
+int flag_yellow = 0;
+int flag_green = 0;
+
 int isCross = 1;
 
 void display2(int num)
@@ -55,11 +59,47 @@ void updateClockBuffer2(int num)
 	led_buffer2[0] = num / 10;
 	led_buffer2[1] = num % 10;
 }
-void set_timer_default()
+
+void checktimer()
 {
-	t_red = timer_red;
-	t_yellow = timer_yellow;
-	t_green = timer_green;
+	if (flag_red == 0) t_red = timer_red;
+	if (flag_yellow == 0) t_yellow = timer_yellow;
+	if (flag_green == 0) t_green = timer_green;
+	if (flag_red == 1 || flag_yellow == 1 || flag_green == 1)
+	{
+		if (t_red == (t_yellow + t_green))
+		{
+			timer_red = t_red;
+			timer_yellow = t_yellow;
+			timer_green = t_green;
+		}
+		flag_red = 0;
+		flag_yellow = 0;
+		flag_green = 0;
+	}
+}
+void set_timer_default(int mode)
+{
+	switch (mode)
+	{
+		case NORMAL:
+			checktimer();
+			t_red = timer_red;
+			t_yellow = timer_yellow;
+			t_green = timer_green;
+			break;
+		case MODIFY_RED:
+			t_red = timer_red;
+			break;
+		case MODIFY_YELLOW:
+			t_yellow = timer_yellow;
+			break;
+		case MODIFY_GREEN:
+			t_green = timer_green;
+			break;
+		default:
+			break;
+	}
 }
 
 void set_timer_led(int mode)
@@ -197,11 +237,25 @@ void light_traffic_run()
 	}
 }
 
-void Confirm_action()
+void Confirm_action(int mode)
 {
-	timer_red = t_red;
-	timer_yellow = t_yellow;
-	timer_green = t_green;
+	switch (mode)
+	{
+		case MODIFY_RED:
+			flag_red = 1;
+			break;
+		case MODIFY_YELLOW:
+			flag_yellow = 1;
+			break;
+		case MODIFY_GREEN:
+			flag_green = 1;
+			break;
+		default:
+			break;
+	}
+	//timer_red = t_red;
+	//timer_yellow = t_yellow;
+	//timer_green = t_green;
 }
 
 void update7SEG(int index)
