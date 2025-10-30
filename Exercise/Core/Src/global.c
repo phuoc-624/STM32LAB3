@@ -38,7 +38,7 @@ void display2(int num)
 	}
 }
 
-void display1(int num)
+void display1(int num)// hien thi mode
 {
 	updateClockBuffer1(num);
 	if (timer3_flag == 1)
@@ -120,7 +120,7 @@ void set_timer_led(int mode)
 	}
 }
 
-void set_led(int mode)
+void set_led(int mode)// nhap nhay led
 {
 	if (timer2_flag == 1)
 	{

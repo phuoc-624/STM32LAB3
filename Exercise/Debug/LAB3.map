@@ -14,6 +14,7 @@ c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externalt
 Allocating common symbols
 Common symbol       size              file
 
+SCH_tasks_G         0x320             ./Core/Src/scheduler.o
 uwTick              0x4               ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
 pFlash              0x20              ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o
 htim2               0x48              ./Core/Src/main.o
@@ -315,6 +316,50 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x148 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x10 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x1c ./Core/Src/main.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
+ .text          0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .data          0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/scheduler.o
+ .bss.current_index_task
+                0x0000000000000000        0x1 ./Core/Src/scheduler.o
+ .text.SCH_Init
+                0x0000000000000000       0x18 ./Core/Src/scheduler.o
+ .text.SCH_Add_Task
+                0x0000000000000000       0xc0 ./Core/Src/scheduler.o
+ .text.SCH_Update
+                0x0000000000000000       0xc0 ./Core/Src/scheduler.o
+ .text.SCH_Dispatch_Tasks
+                0x0000000000000000       0x84 ./Core/Src/scheduler.o
+ .text.SCH_Delete_Task
+                0x0000000000000000      0x1e8 ./Core/Src/scheduler.o
+ .debug_info    0x0000000000000000      0x22d ./Core/Src/scheduler.o
+ .debug_abbrev  0x0000000000000000      0x12b ./Core/Src/scheduler.o
+ .debug_aranges
+                0x0000000000000000       0x40 ./Core/Src/scheduler.o
+ .debug_ranges  0x0000000000000000       0x30 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x72 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0xa9c ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x51 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/scheduler.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/scheduler.o
+ .debug_line    0x0000000000000000      0x54a ./Core/Src/scheduler.o
+ .debug_str     0x0000000000000000     0x3d7a ./Core/Src/scheduler.o
+ .comment       0x0000000000000000       0x54 ./Core/Src/scheduler.o
+ .debug_frame   0x0000000000000000       0xcc ./Core/Src/scheduler.o
+ .ARM.attributes
+                0x0000000000000000       0x2d ./Core/Src/scheduler.o
+ COMMON         0x0000000000000000      0x320 ./Core/Src/scheduler.o
  .group         0x0000000000000000        0xc ./Core/Src/software_timer.o
  .group         0x0000000000000000        0xc ./Core/Src/software_timer.o
  .group         0x0000000000000000        0xc ./Core/Src/software_timer.o
@@ -2461,6 +2506,7 @@ LOAD ./Core/Src/button.o
 LOAD ./Core/Src/fsm_automatic.o
 LOAD ./Core/Src/global.o
 LOAD ./Core/Src/main.o
+LOAD ./Core/Src/scheduler.o
 LOAD ./Core/Src/software_timer.o
 LOAD ./Core/Src/stm32f1xx_hal_msp.o
 LOAD ./Core/Src/stm32f1xx_it.o

@@ -7,7 +7,7 @@
 
 #include "software_timer.h"
 
-//int TIMER_CYCLE = (htim2.Init.Prescaler + 1) * (htim2.Init.Period + 1) / 8000000;
+
 #define TIMER_CYCLE 10;
 
 int timer1_counter = 0;
